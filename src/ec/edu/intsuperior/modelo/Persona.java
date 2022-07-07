@@ -1,26 +1,23 @@
 package ec.edu.intsuperior.modelo;
 
-public class Persona {
+import java.util.Date;
 
+public class Persona {
     String ci;
     String nombre;
     String apellido;
     String direccion;
-
-    public enum TipoGenero {
-        MACULINO, FEMENINO
-    }
-    TipoGenero genero;
+    Date fechaNacimiento;
 
     public Persona() {
     }
 
-    public Persona(String ci, String nombre, String apellido, String direccion, TipoGenero genero) {
+    public Persona(String ci, String nombre, String apellido, String direccion, Date fechaNacimiento) {
         this.ci = ci;
         this.nombre = nombre;
         this.apellido = apellido;
         this.direccion = direccion;
-        this.genero = genero;
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public void setApellido(String apellido) {
@@ -35,8 +32,8 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public void setGenero(TipoGenero genero) {
-        this.genero = genero;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public void setNombre(String nombre) {
@@ -55,8 +52,8 @@ public class Persona {
         return direccion;
     }
 
-    public TipoGenero getGenero() {
-        return genero;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
     public String getNombre() {
@@ -65,10 +62,15 @@ public class Persona {
 
     @Override
     public String toString() {
-        return "Los datos de la persona solicitada son: \n"
-                + "Cedula: " + getCi() + "\n"
-                + "Nombre y apellido: " + getNombre() + " " + getApellido() + "\n"
-                + "genero: " + getGenero();
-    }
+        return "Los datos del cliente son: \n"
+                + "Cedula: "+getCi()+"\n"
+                + "Nombre: "+getNombre()+"\n"
+                + "Apellido: "+getApellido()+"\n"
+                + "Direccion: "+getDireccion()+"\n";
+                }
+    
+    
+    
+
 
 }
